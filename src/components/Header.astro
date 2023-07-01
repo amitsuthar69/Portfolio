@@ -1,0 +1,51 @@
+<header>
+  <nav
+    class="flex bg-gray-800 h-12 lg:h-16 justify-center md:justify-around items-center"
+  >
+    <div class="Logo text-lg lg:text-2xl">Amit's Portfolio</div>
+    <div class="NavBar">
+      <ul class="hidden md:flex justify-center gap-8">
+        <li><a class="nav-link" href="#about-me">Home</a></li>        
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#contact-me">Contact Me</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .nav-link {
+    @apply hover:text-cyan-400;
+  }
+
+  .nav-link {
+    transition: opacity 0.4s;
+  }
+
+  .nav-link.dimmed {
+    opacity: 0.5;
+  }
+</style>
+
+<script>
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("mouseover", () => {
+      navLinks.forEach((otherLink) => {
+        if (otherLink !== link) {
+          otherLink.classList.add("dimmed");
+        }
+      });
+    });
+
+    link.addEventListener("mouseout", () => {
+      navLinks.forEach((otherLink) => {
+        if (otherLink !== link) {
+          otherLink.classList.remove("dimmed");
+        }
+      });
+    });
+  });
+</script>

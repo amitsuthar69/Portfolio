@@ -1,0 +1,57 @@
+<main>
+  <section
+    id="about-me"
+    class="first flex flex-col md:flex-row md:justify-center md:mx-auto mt-10 md:mt-20 gap-8 md:gap-8 lg:gap-16 justify-around items-center w-[100%]"
+  >
+    <div class="leftSection mx-2 text-3xl md:text-4xl">
+      Hi, My name is <span class="text-violet-500">Amit</span>
+      <div class="text-xl md:text-3xl">
+        and I am a passionate <p
+          id="typing-text"
+          class="typing-text text-violet-400"
+        >
+          Programmer
+        </p>
+      </div>
+      <div class="btns text-sm md:text-sm lg:text-lg mt-4 md:mx-0  flex gap-4">
+        <button
+          class="resume bg-violet-500 md:p-2 px-2 py-1 rounded-xl md:py-1 hover:bg-transparent border-2 border-violet-500 active:border-violet-500 hover:cursor-pointer"
+          ><a
+            href="https://drive.google.com/file/d/1bDtq6Si0bWaGRErNN89nwfgZ-MZyYp7n/view"
+            >Resume</a
+          ></button
+        >
+        <button
+          class="github bg-violet-500 md:p-2 px-2 py-1 rounded-xl md:py-1 hover:bg-transparent border-2 border-violet-500 active:border-violet-500 hover:cursor-pointer"
+          ><a href="https://github.com/amitsuthar69">GitHub</a></button
+        >
+      </div>
+    </div>
+
+    <div class="rightSection mx-2 md:w-[30%]">
+      <img src="/public/portfolioimage.png" alt="img" />
+    </div>
+  </section>
+</main>
+
+<style>
+  .typing-effect {
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  const texts = ["Programmer", "Web Developer", "Video Editor", "Learner"];
+  const typingText = document.getElementById("typing-text");
+
+  function updateText() {
+    let currentTextIndex = 0;
+
+    setInterval(() => {
+      typingText.textContent = texts[currentTextIndex];
+      currentTextIndex = (currentTextIndex + 1) % texts.length;
+    }, 2000);
+  }
+
+  updateText();
+</script>
